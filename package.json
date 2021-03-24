@@ -3,5 +3,18 @@
   "private": true,
   "devDependencies": {
     "lerna": "^4.0.0"
+  },
+  "author": "hans",
+  "homepage": "https://github.com/xhl592576605/vogter#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhl592576605/vogter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xhl592576605/vogter/issues"
+  },
+  "config": {
+    "GITHUB_AUTH": "e0316008f4222026d1b7ef788253723ebb143c2e"
   }
 }
