@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-vogter",
-  "version": "0.0.3",
+  "version": "0.0.4-alpha.0",
   "description": "vue模块化框架-vogter，支持vue2，vue3",
   "author": "hans",
   "homepage": "https://github.com/xhl592576605/vogter#readme",
@@ -24,10 +24,10 @@
     "url": "https://github.com/xhl592576605/vogter/issues"
   },
   "devDependencies": {
-    "commander": "^6.2.1",
     "@babel/core": "^7.12.13",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/preset-react": "^7.12.10"
+    "@babel/preset-react": "^7.12.10",
+    "commander": "^6.2.1"
   },
   "dependencies": {
     "uglify-js": "^3.12.7"
