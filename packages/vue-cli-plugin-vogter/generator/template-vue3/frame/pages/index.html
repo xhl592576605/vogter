@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="/resource/favicon.ico">
+  <title>vue-cli-umd-plugin-demo-vue3</title>
+  <!---------------------------------------- 全局配置区 ---------------------------------------->
+  <script>
+    window.$frame={
+      root:{
+        path:'/views/app/index.js'
+      }
+    }
+  </script>
+
+  <!---------------------------------------- 全局样式区 ---------------------------------------->
+  <%%= require('fs').readFileSync('frame/pages/templates/style.html', 'utf8') %>
+
+  <!---------------------------------------- 静态依赖区 ---------------------------------------->
+  <%%= require('fs').readFileSync('frame/pages/templates/externals-web.html', 'utf8') %>
+
+  <!---------------------------------------- 核心依赖区 ---------------------------------------->
+  <script>
+    window.$externals = <%%= JSON.stringify(Array.from(new Set(Object.values(webpackConfig.externals)))) %>
+  </script>
+  <%%= require('fs').readFileSync('frame/pages/templates/preset.html', 'utf8') %>
+
+  <!---------------------------------------- 编译注入区 ---------------------------------------->
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+</html>

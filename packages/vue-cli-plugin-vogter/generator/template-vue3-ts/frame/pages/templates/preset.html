@@ -1,0 +1,18 @@
+<script src="/resource/libs/requirejs/require.min.js"></script>
+<script>
+  window.$externals.forEach(function (external) {
+    if (window[external]) {
+      define(external, [], function () {
+        return window[external]
+      })
+    } else {
+      window[external] = null
+    }
+  })
+  window.require.config({
+    waitSeconds: 0,
+    paths: {
+
+    }
+  })
+</script>
