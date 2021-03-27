@@ -4,6 +4,7 @@
 -  [vue-cli-plugin-vogter](https://github.com/xhl592576605/vogter/blob/master/packages/vue-cli-plugin-vogter) vogter框架的vue-cli插件，可以创建vogter模板
 - [@vogter/vue3-axios](https://github.com/xhl592576605/vogter/tree/master/packages/vogter-vue3-axios) vogter框架的接口请求类库，可单独使用，独特的组件化api请求机制
 - [@vogter/vue3-hook](https://github.com/xhl592576605/vogter/tree/master/packages/vogter-vue3-hook) vogter框架的钩子（事件总线），可单独使用，支持同步，异步回调，自定义生命周期
+- [@vogter/vue3-core](https://github.com/xhl592576605/vogter/tree/master/packages/vogter-vue3-core) vogter框架的核心库
 
 
 ### lerna管理
