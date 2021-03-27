@@ -17,9 +17,10 @@ declare module '@vue/runtime-core' {
   }
 }
 declare global {
+  interface iVogter {
+    $eventBus?: HookService
+  }
   interface Window {
-    $vogter: {
-      $eventBus?: HookService
-    }
+    $vogter: iVogter
   }
 }

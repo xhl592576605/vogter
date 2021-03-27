@@ -1,9 +1,11 @@
 import HookService from './hook/hook-service'
-import { HookType } from './hook/hook-option'
+import { HookType, HookOption, HookFunction } from './hook/hook-option'
 import install from './install'
 export {
   install,
   HookService,
-  HookType
+  HookType,
+  HookOption,
+  HookFunction
 }
 export * from './globalExtensions'

@@ -11,7 +11,7 @@
   },
   "dtsRollup": {
     "enabled": true,
-    "untrimmedFilePath": "./dist/vogter-vue3-axios.d.ts"
+    "untrimmedFilePath": "./dist/vogter-vue3-core.d.ts"
   },
   "tsdocMetadata": {
     "enabled": false

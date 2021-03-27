@@ -94,6 +94,60 @@ export default class HookService {
   }
 
   /**
+   * 
+   * @param option 原有基础的hook 增加回调
+   */
+  $tap(option: HookOption) {
+    let hook = this.$getHook(option)
+    if (!hook || hook.length == 0) {
+      console.warn(`[@vogter/vue3-hook] no register Hook in 
+                  ${option.group} Group [name:${option.prefix}-${option.name}-${option.suffix}] `)
+      return
+    }
+    hook.forEach((h: any) => {
+      if (option.Hook) {
+        if (!Array.isArray(option.Hook) && option.Hook) {
+          option.Hook = [option.Hook as HookFunction]
+        }
+        const name = option.name
+        const isAsync = name.includes('async.')
+        option.Hook.forEach((hookFunc: HookFunction, index: number) => {
+          const _hookFunc = Object.assign({}, hookFunc || {}, { context: option.context })
+          HookFactory.newTap(isAsync, h.hook, _hookFunc)
+          h.Hook.push(hookFunc)
+        })
+      }
+    })
+
+  }
+  /**
+   * create hook
+   * @param option 
+   * @returns 
+   */
+  $createHook(option: HookOption | string,) {
+    let _option: HookOption
+    if (this.$dataCheck.$isString(option)) {
+      _option = Object.assign({}, HookService.createBaseHookOption(option as string), {
+        hookType: HookType.Default,
+        args: 10,
+        context: false
+      })
+    } else {
+      _option = option as HookOption
+      !_option.group && (_option.group = HookService.defaultGroup)
+      !_option.prefix && (_option.prefix = HookService.defaultFix)
+      !_option.suffix && (_option.suffix = HookService.defaultFix)
+    }
+    let hook = this.$getHook(_option)
+    if (hook.length > 0) {
+      return hook[0]
+    }
+    hook = HookFactory.newHook(_option)
+    this.$defineHook(_option, hook)
+    return hook
+  }
+  /**
    * remove hook
    * @param option 
    */
@@ -192,7 +246,7 @@ export default class HookService {
   $getHookProxy(group: any, name: string) {
     const proxyHook = Reflect.get(group, name)
     if (!proxyHook) {
-      console.warn(`[@vogter/vue3-hook] hookStore no exist [${name}] proxyHook`)
+      //console.warn(`[@vogter/vue3-hook] hookStore no exist [${name}] proxyHook`)
       return {}
     }
     return proxyHook
@@ -205,7 +259,7 @@ export default class HookService {
   $getHookGroup(groupName: string) {
     const group = Reflect.get(this.hookStore, groupName)
     if (!group) {
-      console.warn(`[@vogter/vue3-hook] hookStore no exist [${groupName}] group`)
+      // console.warn(`[@vogter/vue3-hook] hookStore no exist [${groupName}] group`)
       return {}
     }
     return group

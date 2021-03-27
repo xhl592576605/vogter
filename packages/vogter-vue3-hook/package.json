@@ -1,6 +1,6 @@
 {
   "name": "@vogter/vue3-hook",
-  "version": "0.0.4-alpha.0",
+  "version": "0.0.4-alpha.1",
   "description": "Vogter's hook(vue)",
   "main": "dist/vogter-vue3-hook.cjs.js",
   "unpkg": "dist/vogter-vue3-hook.global.js",

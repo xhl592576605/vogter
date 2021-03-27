@@ -24,7 +24,7 @@ export interface BaseHookOption {
 export interface HookOption extends BaseHookOption {
 
   hookType: HookType,
-  Hook: HookFunction | Array<HookFunction>,
+  Hook?: HookFunction | Array<HookFunction>,
   interceptOpt?: Object | undefined, // 用于拦截器
   args: Array<string> | Number, // 用于实例化参数个数
   context: boolean //用于启用上下文，优先级比HookFunction的context大，是直接配置在拦截器上，若是需要设置上下文的值，请在拦截器的拦截方法声明

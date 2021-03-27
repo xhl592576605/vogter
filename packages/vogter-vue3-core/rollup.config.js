@@ -107,7 +107,12 @@ function createConfig (format, output, plugins = []) {
 
   const external = [
     'vue',
-    'lodash'
+    'lodash',
+    'vuex',
+    'vue-router',
+    '@vue/runtime-dom',
+    '@vueruntime-core',
+    '@vogter/vue3-hook'
   ]
 
   const nodePlugins = [resolve(), commonjs()]

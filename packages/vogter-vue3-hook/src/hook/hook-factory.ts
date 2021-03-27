@@ -51,8 +51,12 @@ export default class HookFactory {
     const hook = HookFactory.createHook(option, isAsync)
     const interceptOpt = Object.assign({}, option.interceptOpt || {}, { context: option.context })
     hook.intercept(interceptOpt as Object)
-    if (!Array.isArray(option.Hook)) {
-      option.Hook = [option.Hook]
+
+    if (!Array.isArray(option.Hook) && option.Hook) {
+      option.Hook = [option.Hook as HookFunction]
+    }
+    if (!option.Hook) {
+      option.Hook = []
     }
     option.Hook.forEach((hookFunc: HookFunction, index: number) => {
       const _hookFunc = Object.assign({}, hookFunc || {}, { context: option.context })
