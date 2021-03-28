@@ -1,0 +1,32 @@
+{
+  "name": "@vogter/vogter-cli",
+  "version": "0.0.1",
+  "description": "vogter cli",
+  "keywords": [
+    "vogter"
+  ],
+  "author": "hans",
+  "homepage": "https://github.com/xhl592576605/vogter#readme",
+  "license": "ISC",
+  "main": "bin/vogter.js",
+  "bin": {
+    "vogter": "bin/vogter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhl592576605/vogter.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/xhl592576605/vogter/issues"
+  },
+  "dependencies": {
+    "commander": "^7.2.0",
+    "fs-extra": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37"
+  }
+}
